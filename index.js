@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
 const authRoutes = require('./routes/authRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json()); // read JSON data
 
 // Routes 
 app.use('/api/auth', authRoutes);     // http://localhost:3000/api/auth
+app.use('/api/orders', orderRoutes); // http://localhost:3000/api/orders
 
 
 app.listen(PORT, () => {
